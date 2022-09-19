@@ -1,0 +1,351 @@
+<!doctype html>
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<title>card hover</title>
+
+
+
+		<style>
+
+/*position absolute work according to the screen 
+position relative work according to the parent div (<div class="parent"><div class="child" style="width:20px;height:30px;"></div></div>)
+position fixed scroll 
+position sticky top:20px left:10px jaise he top se scroll hoke 20px hoga waise he div sticky ho jaega (only work in chrome safari firefox), not work in internet explorer 
+*/
+
+
+			*{
+				padding: 0;
+				margin: 0;
+				box-sizing: 0;
+			}
+			.parent{
+				background: lightpink;
+				width: 100%;
+				height: 100vh;
+				display: flex;
+				
+				
+
+			}
+
+		
+			.card1{
+				margin: auto;
+				background: white;
+				height: 50vh;
+				width: 30%;
+				border: 5px solid white;
+				box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+				
+
+	
+				/*position: relative;*/
+
+			}
+
+			.card1 img{
+				width: 100%;
+				height: 100%;
+				position: relative;
+				z-index: 1;
+				object-fit: cover;
+				display: block;
+				transition: all 0.8s;
+
+			}
+
+		/*.image img:hover{
+				width: 70%;
+				height: 70%;
+			}*/
+
+			.card1 .ice h1{
+				position: absolute;
+				padding-top: 19%;
+				padding-left: 10%;
+				text-align: center;
+
+
+
+			}
+
+
+		
+			.card2{
+				margin: auto;
+				background: white;
+				height: 50vh;
+				width: 30%;
+				border: 5px solid white;
+				box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+				
+
+	
+				/*position: relative;*/
+
+			}
+
+			.card2 img{
+				width: 100%;
+				height: 100%;
+				position: relative;
+				z-index: 1;
+				object-fit: cover;
+				display: block;
+				transition: all 0.8s;
+
+			}
+
+			.card2 .ice h1{
+				position: absolute;
+				padding-top: 19%;
+				padding-left: 10%;
+				text-align: center;
+
+
+
+			}
+
+
+			.card3{
+				margin: auto;
+				background: white;
+				height: 50vh;
+				width: 30%;
+				border: 5px solid white;
+				box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+				
+
+	
+				/*position: relative;*/
+
+			}
+
+			.card3 img{
+				width: 100%;
+				height: 100%;
+				position: relative;
+				z-index: 1;
+				object-fit: cover;
+				display: block;
+				transition: all 0.8s;
+
+			}
+
+			.card3 .ice h1{
+				position: absolute;
+				padding-top: 19%;
+				padding-left: 10%;
+				text-align: center;
+
+
+
+			}
+			.icons1{
+				position: absolute;
+				left: 26%;
+				cursor: pointer;
+				
+			}
+
+			.icons2{
+				position: absolute;
+				left: 60%;
+				cursor: pointer;
+				
+			}
+			.icons3{
+				position: absolute;
+				left: 93%;
+				cursor: pointer;
+				
+			}
+
+			#ico1 i{
+				padding-left: 50%;
+				padding-top: 5%;
+				display: block;
+			}
+			#ico2 i{
+				padding-left: 78%;
+				padding-top: 5%;
+				display: block;
+			}
+			#ico3 i{
+				padding-left: 78%;
+				padding-top: 5%;
+				display: block;
+			}
+
+
+		</style>
+	</head>
+	<body>
+		<div class="parent">
+			<div class="card1">
+				<div class="ice">
+					<h1>Icecream</h1>
+				</div>
+				<div class="icons1">
+					<i id="ico1" class="fa fa-heart" style="font-size:48px;color:black;"></i>
+				</div>
+							<img id="image1" src="strawberry.jpg">
+
+
+			</div>
+
+			<div class="card2">
+				<div class="ice">
+					<h1>Kachauri</h1>
+				</div>
+				<div class="icons2">
+					<i id="ico2" class="fa fa-heart" style="font-size:48px;color:black;"></i>
+				</div>
+			<img id="image2" src="images/Kachauri.jpg">
+
+
+			</div>
+
+<div class="card3">
+				<div class="ice">
+					<h1>kheer</h1>
+				</div>
+				<div class="icons3">
+					<i id="ico3" class="fa fa-heart" style="font-size:48px;color:black;"></i>
+				</div>
+			<img id="image3" src="images/kheer.jpg">
+
+
+			</div>
+
+
+
+
+			</div>
+
+
+			<!-- <div class="parent1" style="display: flex;">
+				<div class="card3">
+				<div class="ice">
+					<h1>Icecream</h1>
+				</div>
+				<div class="icons3">
+					<i id="ico3" class="fa fa-heart" style="font-size:48px;color:black;"></i>
+				</div>
+			<img id="image3" src="strawberry.jpg">
+
+
+			</div>
+			
+			<div class="card3">
+				<div class="ice">
+					<h1>Icecream</h1>
+				</div>
+				<div class="icons3">
+					<i id="ico3" class="fa fa-heart" style="font-size:48px;color:black;"></i>
+				</div>
+			<img id="image3" src="strawberry.jpg">
+
+
+			</div>
+			</div>
+
+			
+			
+		 -->
+
+		<script>
+			// first card
+			var reference = document.querySelector('#ico1');
+			reference.addEventListener('click',()=>{
+				var a = document.querySelector('#ico1');
+				a.style.color = "darkred";
+				a.style.cursor = "pointer"
+
+			})
+
+			var reference1 = document.querySelector('.card1');
+			reference1.addEventListener('mouseenter',() => {
+				document.getElementById('image1').style.width = "70%";
+				
+				document.getElementById('image1').style.height = "70%";
+				document.getElementById('image1').style.cursor = "pointer"
+			})
+
+			var reference1 = document.querySelector('.card1');
+			reference1.addEventListener('mouseleave',() => {
+			document.getElementById('image1').style.width = "100%";
+				document.getElementById('image1').style.height = "100%";
+			document.getElementById('image1').style.cursor = "pointer"
+				
+			})
+
+			
+
+			// second card
+
+var reference2 = document.querySelector('#ico2');
+			reference2.addEventListener('click',()=>{
+				var c = document.querySelector('#ico2');
+				c.style.color = "darkred";
+				c.style.cursor = "pointer"
+
+			})
+
+			var reference3 = document.querySelector('.card2');
+			reference3.addEventListener('mouseenter',() => {
+				document.getElementById('image2').style.width = "70%";
+				
+				document.getElementById('image2').style.height = "70%";
+				document.getElementById('image2').style.cursor = "pointer"
+			})
+
+			var reference3 = document.querySelector('.card2');
+			reference3.addEventListener('mouseleave',() => {
+				document.getElementById('image2').style.width = "100%";
+				
+				document.getElementById('image2').style.height = "100%";
+				document.getElementById('image2').style.cursor = "pointer"
+			})
+
+			
+			
+
+			// third card
+
+
+			var reference4 = document.querySelector('#ico3');
+			reference4.addEventListener('click',()=>{
+				var e = document.querySelector('#ico3');
+				e.style.color = "darkred";
+				e.style.cursor = "pointer"
+
+			})
+
+			var reference5 = document.querySelector('.card3');
+			reference5.addEventListener('mouseenter',() => {
+				document.getElementById('image3').style.width = "70%";;
+				
+				document.getElementById('image3').style.height = "70%";
+				document.getElementById('image3').style.cursor = "pointer"
+			})
+
+			var reference5 = document.querySelector('.card3');
+			reference5.addEventListener('mouseleave',() => {
+				document.getElementById('image3').style.width = "100%";;
+				
+				document.getElementById('image3').style.height = "100%";
+				document.getElementById('image3').style.cursor = "pointer"
+			})
+		
+
+
+		</script>
+	
+	</body>
+	</html>
